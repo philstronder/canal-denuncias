@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Senha</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <form onsubmit="handleSubmit(event)">
+    <label for="txtEmail">E-mail</label>
+    <input id="txtEmail" type="email"/>
+    <label for="txtSenhaAtual">Senha atual</label>
+    <input id="txtSenhaAtual" type="password">
+    <label for="">Nova senha</label>
+    <input id="txtNovaSenha" type="password">
+    <label for="txtRepitaNovaSenha">Repita a nova senha</label>
+    <input id="txtRepitaNovaSenha" type="password">
+    <button>Enviar</button>
+  </form>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault()
+      console.log($("#txtEmail").val())
+      console.log($("#txtSenhaAtual").val())
+      console.log($("#txtNovaSenha").val())
+      console.log($("#txtRepitaNovaSenha").val())
+    }
+  </script>
+</body>
+</html>

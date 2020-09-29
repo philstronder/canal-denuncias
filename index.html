@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canal de Denúncias - TO Brasil</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Canal de denúncias TO Brasil</h1>
+
+  <section>
+    <h3>Obrigado por enviar a sua denúncia</h3>
+    <h4>Anote o número do protocolo para acompanhar o seu andamento:</h4>
+    <span id="numProtocolo">2020071501</span>
+  </section>
+
+  <section>
+    <h3>Consulta de protocolo</h3>
+    <form>
+      <input name="txtNumProtocolo" type="text" />
+      <button>Enviar</button>
+    </form>
+
+  </section>
+
+  <section>
+    <h3>Registre aqui a sua denúncia</h3>
+    <form onsubmit="handleSubmit(event)">
+      <label for="txtTitulo">Título</label>
+      <input id="txtTitulo" type="text" />
+      <label for="txtTitulo">Descricão</label>
+      <textarea id="txtDescricao" id="txtDescricao" cols="30" rows="10"></textarea>
+      <label for="filAnexos">Anexos</label>
+      <input type="file" id="filAnexos" multiple />
+      <input type="hidden" name="files" />
+      <button>Enviar</button>
+    </form>
+  </section>
+
+  <script>
+      var fileNames = []
+    $(document).ready(function() {
+      $("#filAnexos").change(function() {
+          for (var i = 0; i < $(this).get(0).files.length; ++i) {
+              fileNames.push($(this).get(0).files[i].name)
+          }
+          // $("input[name=files]").val(fileNames)
+      })
+    })
+
+    function handleSubmit(e) {
+      e.preventDefault()
+      console.log($("#txtTitulo").val())
+      console.log($("#txtDescricao").val())
+
+
+      
+
+      console.log(fileNames[0])
+      console.log(fileNames[1])
+      console.log(fileNames[2])
+      // console.log($("input[name=files]").val())
+    }
+  </script>
+</body>
+</html>

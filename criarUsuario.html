@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Usuário</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <form onsubmit="handleSubmit(event)">
+    <label for="txtNome">Nome</label>
+    <input id="txtNome" type="text"/>
+    <label for="txtEmail">E-mail</label>
+    <input id="txtEmail" type="email"/>
+    <button>Enviar</button>
+  </form>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault()
+      console.log($("#txtNome").val())
+      console.log($("#txtEmail").val())
+    }
+  </script>
+</body>
+</html>
